@@ -9,7 +9,7 @@ const sendVerificationEmail = async (data) => {
     from: 'webapp account creation <no-reply@mg.spring2024cc.me>',
     to: data.username,
     subject: 'Verify your email address',
-    text: `Click the following link to verify your email address: https://example.com/verify/${data.id}`,
+    text: `Click the following link to verify your email address: http://spring2024cc.me:3000/verify/${data.id}`,
   };
 
   try {
