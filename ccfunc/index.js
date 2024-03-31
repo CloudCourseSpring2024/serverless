@@ -25,13 +25,7 @@ const sendVerificationEmail = async (data) => {
 export const handleNewUser = async (data, context) => {
   try {
     const userData = JSON.parse(Buffer.from(data.data, 'base64').toString());
-
-    // Send verification email
     await sendVerificationEmail(userData);
-
-    // Track email in database
-    // await trackEmailsInDatabase(userData);
-
     console.log('Verification email sent and tracking data stored successfully.');
   } catch (error) {
     console.error('Error handling new user:', error);
